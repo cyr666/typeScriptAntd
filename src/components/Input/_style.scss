@@ -1,0 +1,69 @@
+.input{
+    display: inline-block;
+    position: relative;
+    input{
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: middle;
+        font-weight: $input-font-weight;
+        line-height: $input-line-height;
+        border: $input-border-width solid $input-border-color;
+        padding: $input-padding-y $input-padding-x;
+        font-size: $input-font-size;
+        border-radius: $border-radius;
+        color: $body-color;
+        transition: $input-transition;
+        background: #fff;
+        &:hover, &:focus{
+            border: $input-border-width solid $input-focus-border-color;
+            outline: none;
+        }
+        &.disabled,
+        &[disabled]{
+            cursor: not-allowed;
+            background-color: $input-disabled-bg;
+            box-shadow:none;
+            border: $input-disabled-border-color;
+            > * {
+                pointer-events: none;
+                border: $input-disabled-border-color;
+            }
+        }
+    }
+    
+}
+
+.icon-con{
+    position: relative;
+    input{
+        padding-right: 30px;
+    }
+    .input-icon{
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        padding: $input-padding-y 0;
+        color: #acacac;
+    }
+}
+.input-lg{
+    input{
+        @include input-size ($input-padding-y-lg,$input-padding-x-lg,$input-font-size-lg,$input-border-radius-lg)
+    }
+    .input-icon{
+        box-sizing: border-box;
+        padding: $input-padding-y-lg 0;
+    }
+}
+.input-sm{
+    input{
+        @include input-size ($input-padding-y-sm,$input-padding-x-sm,$input-font-size-sm,$input-border-radius-sm)
+    }
+    .input-icon{
+        box-sizing: border-box;
+        padding: $input-padding-y-sm 0;
+    }
+}
